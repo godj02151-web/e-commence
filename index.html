@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique en ligne</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">MaBoutique</h1>
+            <div class="nav-icons">
+                <button id="cartBtn" class="icon-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cartCount" class="cart-count">0</span>
+                </button>
+                <button id="chatToggle" class="icon-btn">
+                    <i class="fas fa-comments"></i>
+                </button>
+                <a href="admina.html" class="admin-link" title="Administration">
+                    <i class="fas fa-cog"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <main>
+        <section class="hero">
+            <h2>Bienvenue dans notre boutique</h2>
+            <p>Découvrez nos produits de qualité</p>
+        </section>
+
+        <section class="products-section">
+            <h2>Nos Produits</h2>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="promo">Promotions</button>
+                <button class="filter-btn" data-filter="nouveau">Nouveautés</button>
+            </div>
+            
+            <div class="products-container" id="productsContainer">
+                <!-- Les produits seront chargés dynamiquement ici -->
+            </div>
+        </section>
+
+        <!-- Panier -->
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Votre Panier</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <!-- Articles du panier -->
+                    </div>
+                    <div class="cart-summary">
+                        <p>Total: <span id="cartTotal">0</span> FCFA</p>
+                        <button id="checkoutBtn" class="btn btn-primary">Procéder au paiement</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de paiement -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content payment-modal">
+                <div class="modal-header">
+                    <h2>Paiement Mobile</h2>
+                    <span class="close-payment">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label for="clientName">Nom complet</label>
+                            <input type="text" id="clientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientPhone">Numéro de téléphone</label>
+                            <input type="tel" id="clientPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientAddress">Adresse complète</label>
+                            <textarea id="clientAddress" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Localisation</label>
+                            <button type="button" id="locationBtn" class="btn-location">
+                                <i class="fas fa-map-marker-alt"></i> Utiliser ma localisation
+                            </button>
+                            <div id="mapPreview" class="map-preview">
+                                <!-- Aperçu de la carte -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentMethod">Méthode de paiement</label>
+                            <select id="paymentMethod" required>
+                                <option value="">Sélectionnez une méthode</option>
+                                <option value="orange">Orange Money</option>
+                                <option value="mtn">MTN Mobile Money</option>
+                                <option value="wave">Wave</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Total à payer: <span id="paymentTotal">0</span> FCFA</label>
+                        </div>
+                        <div class="payment-actions">
+                            <button type="button" class="btn btn-secondary close-payment">Annuler</button>
+                            <button type="submit" class="btn btn-primary">Payer maintenant</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chat en ligne -->
+    <div id="chatWidget" class="chat-widget">
+        <div class="chat-header">
+            <h3>Service Client</h3>
+            <button id="closeChat" class="chat-close-btn">&times;</button>
+        </div>
+        <div class="chat-body">
+            <div id="chatMessages" class="chat-messages">
+                <div class="message bot">
+                    <p>Bonjour! Comment pouvons-nous vous aider aujourd'hui?</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Tapez votre message...">
+                <button id="sendMessage" class="btn-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 MaBoutique. Tous droits réservés.</p>
+    </footer>
+    
+
+    <script src="script.js"></script>
