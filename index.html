@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique en ligne</title>
+    <title>Boutique en ligne - MaBoutique</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -21,7 +20,7 @@
                 <button id="chatToggle" class="icon-btn">
                     <i class="fas fa-comments"></i>
                 </button>
-                <a href="#" class="admin-link" title="Administration">
+                <a href="admin.html" class="admin-link" title="Administration">
                     <i class="fas fa-cog"></i>
                 </a>
             </div>
@@ -127,9 +126,7 @@
         </div>
         <div class="chat-body">
             <div id="chatMessages" class="chat-messages">
-                <div class="message bot">
-                    <p>Bonjour! Comment pouvons-nous vous aider aujourd'hui?</p>
-                </div>
+                <!-- Messages du chat -->
             </div>
             <div class="chat-input">
                 <input type="text" id="chatInput" placeholder="Tapez votre message...">
@@ -139,9 +136,11 @@
             </div>
         </div>
     </div>
+
     <footer>
         <p>&copy; 2023 MaBoutique. Tous droits réservés.</p>
     </footer>
-    
 
     <script src="script.js"></script>
+</body>
+</html>
